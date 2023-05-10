@@ -1,0 +1,140 @@
+html {
+  height: 100%;
+}
+
+body {
+  font-family: "Raleway";
+  background: url(https://i.gyazo.com/9024e4cc2d29408dd08bd67a54b355c8.png);
+  background-size: cover;
+  background-position: center;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  background: #2980b9;
+  margin: 0;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  font-size: 24px;
+  font-weight: normal;
+  color: white;
+}
+
+.fa-plus-square {
+  float: right;
+}
+
+.fa-minus-square {
+  float: right;
+}
+
+li {
+  background: #fff;
+  height: 40px;
+  line-height: 40px;
+  color: #666;
+  user-select: none;
+}
+
+li:nth-child(2n) {
+  background: #f7f7f7;
+}
+
+span {
+  background: #e74c3c;
+  height: 40px;
+  margin-right: 20px;
+  text-align: center;
+  color: white;
+  width: 0;
+  display: inline-block;
+  transition: 0.3s linear;
+  opacity: 0;
+}
+
+li:hover {
+  cursor: pointer;
+}
+
+li:hover span {
+  width: 40px;
+  opacity: 1;
+}
+
+input {
+  font-size: 18px;
+  background: #f5f5f5;
+  color: #2980b9;
+  width: 100%;
+  border: none;
+  box-sizing: border-box;
+  padding: 13px 13px 13px 20px;
+  display: none;
+}
+
+input:focus {
+  border: 2px solid #2980b9;
+  background: white;
+  outline: none;
+}
+
+#container {
+  margin: 250px auto;
+  width: 600px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  background: #f5f5f5;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: grey;
+}
+
+li.over {
+  border: 1px dashed grey;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 18px;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}

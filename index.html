@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Task list</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Raleway"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <html>
+      <head>
+        <title>Todo List</title>
+      </head>
+      <body>
+        <div id="container">
+          <h1>
+            Task List
+            <i class="fa fa-plus-square tooltip" id="toggle">
+              <span class="tooltiptext">Tooltip text</span>
+            </i>
+          </h1>
+          <input
+            type="text"
+            id="add-todo"
+            style="display: none"
+            placeholder="Add a new TO-DO"
+          />
+          <ul>
+            <li draggable="true">
+              <span><i class="fa fa-trash"></i></span> Task 1
+            </li>
+            <li draggable="true">
+              <span><i class="fa fa-trash"></i></span> Task 2
+            </li>
+            <li draggable="true">
+              <span><i class="fa fa-trash"></i></span> Task 3
+            </li>
+            <li draggable="true">
+              <span><i class="fa fa-trash"></i></span> Task 4
+            </li>
+          </ul>
+        </div>
+      </body>
+    </html>
+    <script src="./script.js"></script>
+  </body>
+</html>
