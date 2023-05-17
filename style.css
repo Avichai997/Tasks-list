@@ -2,8 +2,10 @@ html {
   height: 100%;
 }
 
+* {
+  font-family: roboto;
+}
 body {
-  font-family: "Raleway";
   background: url(https://i.gyazo.com/9024e4cc2d29408dd08bd67a54b355c8.png);
   background-size: cover;
   background-position: center;
@@ -27,10 +29,12 @@ h1 {
 
 .fa-plus-square {
   float: right;
+  cursor: pointer;
 }
 
 .fa-minus-square {
   float: right;
+  cursor: pointer;
 }
 
 li {
@@ -106,7 +110,7 @@ li.over {
   border-bottom: 1px dotted black;
 }
 
-.tooltip .tooltiptext {
+/* .tooltip .tooltiptext {
   visibility: hidden;
   width: 120px;
   background-color: #555;
@@ -122,6 +126,26 @@ li.over {
   opacity: 0;
   transition: opacity 0.3s;
   font-size: 18px;
+} */
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: auto;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 15px 21px;
+  display: flex;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 135%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 18px;
+  align-items: center;
 }
 
 .tooltip .tooltiptext::after {

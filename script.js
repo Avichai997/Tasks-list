@@ -12,6 +12,9 @@ toggleTaskStatus = (event) => {
   if (li) li.classList.toggle("completed");
 };
 
+function getLiIndex(ul, li) {
+  return [...ul.children].findIndex((item) => item === li);
+}
 // Delete Task
 onTaskDelete = (event) => {
   const li = event.target.closest("li");
@@ -27,20 +30,25 @@ onTaskDelete = (event) => {
   }
   // up
   if (span === li.children[1]) {
-    function swapListItems(ul, index1, index2) {
-      const li1 = ul.children[index1];
-      const li2 = ul.children[index2];
-      ul.insertBefore(li2, li1);
-    }
-
+    // up in first li
     if (ulElement.firstElementChild === li) {
-      swapListItems(ulElement, li.index, ulElement.lastElementChild.index);
+      ulElement.appendChild(li);
+    } else {
+      const liIndex = getLiIndex(ulElement, li);
+      ulElement.insertBefore(li, ulElement.children[liIndex - 1]);
     }
   }
   // down
   if (span === li.children[2]) {
+    if (ulElement.lastElementChild === li) {
+      ulElement.insertBefore(li, ulElement.firstElementChild);
+    } else {
+      const liIndex = getLiIndex(ulElement, li);
+      ulElement.insertBefore(ulElement.children[liIndex + 1], li);
+    }
   }
 
+  li.classList.toggle("completed");
   event.stopPropagation();
 };
 
@@ -113,8 +121,10 @@ addTodoInputEl.addEventListener("keypress", (event) => {
   // save Task
   const createNewTask = (taskName) =>
     `<li draggable="true">
-      <span><i class='fa fa-trash' aria-hidden='true'></i>
-      </span>${taskName}
+      <span><i class="fa fa-trash"></i></span>
+      <span><i class="fa fa-arrow-up"></i></span>
+      <span><i class="fa fa-arrow-down"></i></span>
+      ${taskName}
     </li>`;
 
   const newTaskItem = createNewTask(addTodoInputEl.value);
