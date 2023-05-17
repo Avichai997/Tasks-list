@@ -6,7 +6,11 @@ html {
   font-family: roboto;
 }
 body {
-  background: url(https://i.gyazo.com/9024e4cc2d29408dd08bd67a54b355c8.png);
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url(https://globalwfm.com/wp-content/uploads/2022/08/Should-You-Return-To-Office-Work-Pros-And-Cons.jpg);
   background-size: cover;
   background-position: center;
 }
@@ -15,9 +19,20 @@ ul {
   list-style: decimal;
   margin: 0;
   padding: 0 0 0 22px;
+  background: rgba(41, 128, 185, 7%);
 }
 
 h1 {
+  background: #2980b9;
+  margin: 0;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  font-size: 24px;
+  font-weight: normal;
+  color: white;
+  border-radius: 15px 15px 0px 0px;
+}
+h2 {
   background: #2980b9;
   margin: 0;
   padding: 10px 20px;
@@ -90,9 +105,10 @@ input:focus {
 
 #container {
   margin: 250px auto;
-  width: 600px;
+  width: 450px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
   background: #f5f5f5;
+  border-radius: 15px;
 }
 
 .completed {
@@ -103,30 +119,15 @@ input:focus {
 li.over {
   border: 1px dashed grey;
 }
+li:last-child {
+  border-radius: 0 0 15px 0;
+}
 
 .tooltip {
   position: relative;
   display: inline-block;
   border-bottom: 1px dotted black;
 }
-
-/* .tooltip .tooltiptext {
-  visibility: hidden;
-  width: 120px;
-  background-color: #555;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px 0;
-  position: absolute;
-  z-index: 1;
-  bottom: 125%;
-  left: 50%;
-  margin-left: -60px;
-  opacity: 0;
-  transition: opacity 0.3s;
-  font-size: 18px;
-} */
 
 .tooltip .tooltiptext {
   visibility: hidden;

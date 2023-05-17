@@ -114,9 +114,9 @@ initEventListeners(ulElement);
 // add TODO button
 addTodoInputEl.addEventListener("keypress", (event) => {
   if (event.key !== "Enter") return;
-  // key is Enter so add a new li
   if (addTodoInputEl.value.length > TASK_NAME_MAX_LENGTH)
     return alert("Task name must be shorter then 30 chars!");
+  // key is Enter so add a new li
 
   // save Task
   const createNewTask = (taskName) =>
