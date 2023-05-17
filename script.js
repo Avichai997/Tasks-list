@@ -3,6 +3,7 @@ let dragElement = null;
 const toggleBtn = document.querySelector("#toggle");
 const addTodoInputEl = document.querySelector("#add-todo");
 const ulElement = document.querySelector("ul");
+
 // Functions:
 
 // Mark TODO as complete
@@ -10,6 +11,7 @@ toggleTaskStatus = (event) => {
   const li = event.target.closest("li");
   if (li) li.classList.toggle("completed");
 };
+
 // Delete Task
 onTaskDelete = (event) => {
   const span = event.target.closest("span");
@@ -23,6 +25,7 @@ onTaskDelete = (event) => {
   event.stopPropagation();
 };
 onDragStartHandler = (event) => {
+  // set css and save the html element data
   event.target.style.opacity = 0.4;
   dragElement = event.target;
   event.dataTransfer.effectAllowed = "move";
@@ -61,6 +64,7 @@ onDragEndHandler = (event) => {
     li.style.opacity = 1;
   });
 };
+
 // Mark TODO as complete
 ulElement.addEventListener("click", toggleTaskStatus);
 // delete TODO span
@@ -82,17 +86,21 @@ initEventListeners(ulElement);
 // add TODO button
 addTodoInputEl.addEventListener("keypress", (event) => {
   if (event.key !== "Enter") return;
+  // key is Enter so add a new li
   if (addTodoInputEl.value.length > TASK_NAME_MAX_LENGTH)
     return alert("Task name must be shorter then 30 chars!");
 
   // save Task
   const createNewTask = (taskName) =>
-    `<li draggable="true"> <span><i class='fa fa-trash' aria-hidden='true'></i></span>${taskName}</li>`;
+    `<li draggable="true">
+      <span><i class='fa fa-trash' aria-hidden='true'></i>
+      </span>${taskName}
+    </li>`;
 
   const newTaskItem = createNewTask(addTodoInputEl.value);
-  document.querySelector("ul").insertAdjacentHTML("afterbegin", newTaskItem);
+  ulElement.insertAdjacentHTML("beforeend", newTaskItem);
   addTodoInputEl.value = "";
-  // toggleBtn.click(); // to close after add new todo
+  toggleBtn.click(); // to close after add new todo
 });
 
 // toggle button animation
