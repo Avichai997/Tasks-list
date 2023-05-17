@@ -24,6 +24,10 @@ onTaskDelete = (event) => {
   }
   event.stopPropagation();
 };
+
+
+
+
 onDragStartHandler = (event) => {
   // set css and save the html element data
   event.target.style.opacity = 0.4;
