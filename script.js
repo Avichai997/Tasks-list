@@ -14,19 +14,35 @@ toggleTaskStatus = (event) => {
 
 // Delete Task
 onTaskDelete = (event) => {
+  const li = event.target.closest("li");
   const span = event.target.closest("span");
-  if (span) {
+
+  // delete
+  if (span === li.children[0]) {
     const li = span.parentNode;
     li.style.opacity = 0;
     li.addEventListener("transitionend", () => {
       li.remove();
     });
   }
+  // up
+  if (span === li.children[1]) {
+    function swapListItems(ul, index1, index2) {
+      const li1 = ul.children[index1];
+      const li2 = ul.children[index2];
+      ul.insertBefore(li2, li1);
+    }
+
+    if (ulElement.firstElementChild === li) {
+      swapListItems(ulElement, li.index, ulElement.lastElementChild.index);
+    }
+  }
+  // down
+  if (span === li.children[2]) {
+  }
+
   event.stopPropagation();
 };
-
-
-
 
 onDragStartHandler = (event) => {
   // set css and save the html element data

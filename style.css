@@ -140,12 +140,11 @@ li.over {
   opacity: 1;
 }
 
-span:nth-child(2)
-{
+span:nth-child(2) {
   background: blue;
 }
 
 span:last-child {
-margin-right: 10px;
-background: green;
+  margin-right: 10px;
+  background: green;
 }
